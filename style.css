@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white;
+}
+
+.main-container {
+  @apply flex;
+  @apply w-screen;
+  @apply h-screen;
+  @apply items-center;
+  @apply justify-center;
+  @apply flex-col;
+  @apply gap-y-16;
+}
+
+/* .player-container {
+  @apply h-screen;
+  @apply w-full;
+  @apply flex;
+  @apply flex-col;
+  @apply gap-y-4;
+  @apply justify-center;
+  @apply items-center;
+}
+
+.player-container > .wrapper {
+  @apply max-w-xs;
+  @apply w-80;
+  @apply py-3;
+  @apply grid;
+  @apply grid-flow-row;
+  @apply justify-center;
+  @apply bg-white;
+  @apply rounded-full;
+  @apply overflow-hidden;
+  @apply shadow-lg;
+  @apply pointer-events-auto;
+}
+
+.wrapper.not-ready {
+  @apply bg-gray-400;
+  @apply pointer-events-none;
+  @apply transition-colors;
+  @apply duration-300;
+}
+
+.player-container > .controls {
+  @apply flex;
+  @apply flex-row;
+  @apply gap-x-4;
+  @apply justify-between;
+  @apply lg:max-w-xs;
+  @apply w-full;
+  @apply px-12;
+}
+
+.controls > button {
+  @apply py-1;
+  @apply px-3;
+  @apply rounded-full;
+  @apply shadow-md;
+  @apply bg-gradient-to-r;
+  @apply from-white;
+  @apply to-white;
+  @apply bg-[200%_200%];
+  @apply pointer-events-auto;
+}
+
+.controls > button.not-ready {
+  @apply bg-gradient-to-r;
+  @apply from-gray-400;
+  @apply to-gray-400;
+  @apply pointer-events-none;
+  @apply transition-colors;
+  @apply duration-300;
+}
+
+button.not-ready > i {
+  @apply opacity-50;
+  @apply transition-opacity;
+  @apply duration-300;
+}
+
+button > i {
+  @apply group-hover:scale-125;
+  @apply transition-all;
+  @apply duration-300;
+  @apply ease-in-out;
+}
+ */
