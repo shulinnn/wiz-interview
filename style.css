@@ -1,93 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
-body {
-  @apply bg-white;
+body,
+html {
+  background: #8a2387;
+  background: -webkit-linear-gradient(to right, #f27121, #e94057, #8a2387);
+  background: linear-gradient(to right, #f27121, #e94057, #8a2387);
+  font-family: "Poppins", sans-serif;
 }
 
-.main-container {
-  @apply flex;
-  @apply w-screen;
-  @apply h-screen;
-  @apply items-center;
-  @apply justify-center;
-  @apply flex-col;
-  @apply gap-y-16;
+.container {
+  margin: 0;
+  height: 100vh; /* use 100% of the height of the viewport */
+  display: grid;
+  place-items: center;
 }
 
-/* .player-container {
-  @apply h-screen;
-  @apply w-full;
-  @apply flex;
-  @apply flex-col;
-  @apply gap-y-4;
-  @apply justify-center;
-  @apply items-center;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 32px;
+  row-gap: 12px;
+  width: calc(100vw - 128px);
+  padding: 32px;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.player-container > .wrapper {
-  @apply max-w-xs;
-  @apply w-80;
-  @apply py-3;
-  @apply grid;
-  @apply grid-flow-row;
-  @apply justify-center;
-  @apply bg-white;
-  @apply rounded-full;
-  @apply overflow-hidden;
-  @apply shadow-lg;
-  @apply pointer-events-auto;
+.wrapper span#artist {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
-.wrapper.not-ready {
-  @apply bg-gray-400;
-  @apply pointer-events-none;
-  @apply transition-colors;
-  @apply duration-300;
+.wrapper span#song-title {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-.player-container > .controls {
-  @apply flex;
-  @apply flex-row;
-  @apply gap-x-4;
-  @apply justify-between;
-  @apply lg:max-w-xs;
-  @apply w-full;
-  @apply px-12;
+.player-wrapper {
+  display: flex;
+  margin-top: 16px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  column-gap: 32px;
 }
 
-.controls > button {
-  @apply py-1;
-  @apply px-3;
-  @apply rounded-full;
-  @apply shadow-md;
-  @apply bg-gradient-to-r;
-  @apply from-white;
-  @apply to-white;
-  @apply bg-[200%_200%];
-  @apply pointer-events-auto;
+#play-pause-button.active #play-button {
+  transform: rotate3d(1, 1, 0, 180deg);
+  opacity: 0;
 }
 
-.controls > button.not-ready {
-  @apply bg-gradient-to-r;
-  @apply from-gray-400;
-  @apply to-gray-400;
-  @apply pointer-events-none;
-  @apply transition-colors;
-  @apply duration-300;
+#play-pause-button {
+  position: relative;
 }
 
-button.not-ready > i {
-  @apply opacity-50;
-  @apply transition-opacity;
-  @apply duration-300;
+#play-pause-button:not(.active) #pause-button {
+  transform: rotate3d(1, 1, 0, 180deg);
+  opacity: 0;
 }
 
-button > i {
-  @apply group-hover:scale-125;
-  @apply transition-all;
-  @apply duration-300;
-  @apply ease-in-out;
+svg {
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
 }
- */
+
+@media screen and (min-width: 426px) {
+  .wrapper {
+    width: 425px;
+  }
+}
+
+.wavesurfer-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper > .additional-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper > .additional-controls > span {
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+  letter-spacing: 0.1em;
+}

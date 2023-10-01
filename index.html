@@ -3,52 +3,62 @@
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Change favicon later -->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <script src="https://kit.fontawesome.com/f3bbf4acfa.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wizionary.com - Interview</title>
 </head>
 
 <body>
 
-  <div class="w-screen h-screen z-20 bg-white absolute flex justify-center items-center" id="loader">
-    <svg class="inline mr-3 w-12 h-12 text-primary animate-spin" viewBox="0 0 100 101" fill="none"
-      xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-        fill="#E5E7EB"></path>
-      <path
-        d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-        fill="currentColor"></path>
-    </svg>
-  </div>
+  <div class="container">
+    <div class="wrapper">
+      <span id="artist">Artist : Eminem</span>
+      <span id="song-title">Not Afraid</span>
+      <div class="player-wrapper">
+        <div id="play-pause-button">
+          <svg id="play-button" width="64" height="64" viewBox="0 0 64 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M42.5 31.134C43.1667 31.5189 43.1667 32.4811 42.5 32.866L27.5 41.5263C26.8333 41.9112 26 41.4301 26 40.6603V23.3397C26 22.5699 26.8333 22.0888 27.5 22.4737L42.5 31.134Z"
+              fill="#E9094F" />
+          </svg>
+          <svg id="pause-button" style="position: absolute;left:-0px;" width="64" height="64" viewBox="0 0 64 64"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="20" width="5" height="24" rx="1" fill="#E9094F" />
+            <rect x="34" y="20" width="5" height="24" rx="1" fill="#E9094F" />
+          </svg>
 
-  <div class="main-container">
-    <span id="song-title" class="text-primary font-semibold">Eminem - not afraid</span>
-    <div id="player" class="w-[calc(100vw_-_32px)] md:max-w-sm"></div>
-    <div class="flex flex-row items-center gap-y-8 flex-wrap max-w-md justify-between w-full px-8">
-      <svg id="zoomIn" xmlns="http://www.w3.org/2000/svg" fill="none" class="w-16 h-16 text-primary" viewBox="0 0 24 24"
-        stroke-width="1" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
-      </svg>
-      <div id="control-button"
-        class=" w-32 h-32 text-white bg-primary rounded-full flex justify-center items-center cursor-pointer">
+        </div>
+        <div class="wavesurfer-container"></div>
       </div>
-      <svg id="zoomOut" xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-primary" fill="none"
-        viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM13.5 10.5h-6" />
-      </svg>
+      <div class="additional-controls">
+        <svg id="backward-button" width="32" height="32" viewBox="0 0 64 64" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 32L40 21.6077V42.3923L22 32Z" fill="#E9094F" />
+          <path d="M22 20V44" stroke="#E9094F" stroke-width="4" stroke-linecap="round" />
+        </svg>
+        <svg id="zoom-in-button" width="32" height="32" viewBox="0 0 64 64" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 32H20" stroke="#E9094F" stroke-width="4" stroke-linecap="round" />
+          <path d="M32 20L32 44" stroke="#E9094F" stroke-width="4" stroke-linecap="round" />
+        </svg>
+        <span id="playback-duration">0:00</span>
+        <svg id="zoom-out-button" width="32" height="32" viewBox="0 0 64 64" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 32H20" stroke="#E9094F" stroke-width="4" stroke-linecap="round" />
+        </svg>
 
-      <div class="w-full flex-row flex gap-x-12 justify-center">
-        <span id="current-time" class="text-primary font-light text-xs">1:30</span>
-        <span id="remaning-time" class="text-primary font-light text-xs">-0:58</span>
+        <svg id="forward-button" width="32" height="32" viewBox="0 0 64 64" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 32L22 42.3923V21.6077L40 32Z" fill="#E9094F" />
+          <path d="M41 20V44" stroke="#E9094F" stroke-width="4" stroke-linecap="round" />
+        </svg>
       </div>
     </div>
   </div>
-
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="/main.js">
+  </script>
 </body>
 
 </html>
