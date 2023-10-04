@@ -44,7 +44,7 @@ wavesurfer.on("timeupdate", () => {
 });
 
 zoomInButton.addEventListener("click", () => {
-  wavesurfer.zoom(wavesurfer.options.minPxPerSec * 5);
+  wavesurfer.zoom(vanillaPixels * 5);
 });
 
 zoomOutButton.addEventListener("click", () => {
