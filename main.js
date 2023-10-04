@@ -51,9 +51,6 @@ zoomOutButton.addEventListener("click", () => {
   wavesurfer.zoom(vanillaPixels);
 });
 
-///debug purposes
-wavesurfer.on("zoom", (e) => console.log(e));
-
 backwardButton.addEventListener("click", () => {
   wavesurfer.skip(-5);
 });
